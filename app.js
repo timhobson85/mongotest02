@@ -4,12 +4,12 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv/config');
 
-//middleware
+//middleware - this is applied to every route that is run through
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//import routes
+//import routes - this just splits up the routes into seperate files
 const postsRoute = require('./routes/posts');
 
 app.use('/posts', postsRoute);
